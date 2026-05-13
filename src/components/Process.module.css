@@ -1,0 +1,117 @@
+.section {
+  background-color: var(--color-surface);
+}
+
+.header {
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+
+.label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.875rem;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3vw, 2.75rem);
+  font-weight: 500;
+  color: var(--color-heading);
+  max-width: 28ch;
+  margin-inline: auto;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 2.5rem;
+  left: calc(100% / 6);
+  right: calc(100% / 6);
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-divider) 15%,
+    var(--color-divider) 85%,
+    transparent
+  );
+}
+
+.step {
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.step:not(:last-child) {
+  border-right: 1px solid var(--color-divider);
+}
+
+.num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--color-primary);
+  opacity: 0.5;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.connector { display: none; }
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 0.75rem;
+}
+
+.stepDesc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .steps::before { display: none; }
+
+  .step {
+    padding: 0;
+    padding-left: 1.5rem;
+    border-right: none;
+    border-left: 2px solid var(--color-divider);
+  }
+
+  .step:not(:last-child) { border-right: none; }
+
+  .connector {
+    display: block;
+    position: absolute;
+    bottom: -1.5rem;
+    left: -1px;
+    width: 2px;
+    height: 1.5rem;
+    background-color: var(--color-primary);
+    opacity: 0.3;
+  }
+}

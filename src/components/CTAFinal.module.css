@@ -1,0 +1,83 @@
+.section {
+  background-color: var(--color-heading);
+  padding-block: var(--section-py);
+}
+
+.inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 500;
+  color: var(--color-text-inverse);
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+}
+
+.headingItalic {
+  font-style: italic;
+  color: var(--color-primary);
+}
+
+.sub {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: color-mix(in srgb, var(--color-text-inverse) 65%, transparent);
+  max-width: 48ch;
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  margin-bottom: 1.25rem;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  background-color: var(--color-primary-active);
+  transform: translateY(0);
+}
+
+.note {
+  font-size: 0.875rem;
+  color: color-mix(in srgb, var(--color-text-inverse) 45%, transparent);
+}
+
+.emailLink {
+  color: color-mix(in srgb, var(--color-text-inverse) 75%, transparent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.emailLink:hover {
+  color: var(--color-primary);
+}

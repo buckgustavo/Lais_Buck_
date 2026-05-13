@@ -1,0 +1,129 @@
+/* ─── Design Tokens ─────────────────────────────────────────── */
+:root {
+  --color-bg: #f5f0e8;
+  --color-surface: #f9f6f0;
+  --color-surface-2: #fdfcf9;
+  --color-surface-offset: #ede8df;
+
+  --color-text: #2c2417;
+  --color-text-muted: #7a6e5f;
+  --color-text-faint: #b5a898;
+  --color-text-inverse: #f9f6f0;
+
+  --color-primary: #9c7a3c;
+  --color-primary-hover: #7d5f28;
+  --color-primary-active: #5e461a;
+  --color-primary-highlight: #e8dfc8;
+
+  --color-heading: #3d2b0f;
+  --color-divider: #ddd5c5;
+  --color-border: #ccc3b0;
+
+  --shadow-sm: 0 1px 3px rgba(44, 36, 23, 0.06), 0 1px 2px rgba(44, 36, 23, 0.04);
+  --shadow-md: 0 4px 12px rgba(44, 36, 23, 0.08), 0 2px 6px rgba(44, 36, 23, 0.05);
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Jost', system-ui, sans-serif;
+
+  --section-py: clamp(4rem, 8vw, 7rem);
+  --container-width: 1160px;
+  --container-px: clamp(1.25rem, 5vw, 2.5rem);
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+}
+
+[data-theme='dark'] {
+  --color-bg: #1a1510;
+  --color-surface: #221c14;
+  --color-surface-2: #2a2218;
+  --color-surface-offset: #16120c;
+  --color-text: #ede5d8;
+  --color-text-muted: #a09080;
+  --color-text-faint: #6a5e50;
+  --color-text-inverse: #1a1510;
+  --color-primary: #c49a50;
+  --color-primary-hover: #d4aa65;
+  --color-primary-active: #e8c07a;
+  --color-primary-highlight: #2e2418;
+  --color-heading: #f0e6d0;
+  --color-divider: #2e2820;
+  --color-border: #3a3228;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-bg: #1a1510;
+    --color-surface: #221c14;
+    --color-surface-2: #2a2218;
+    --color-surface-offset: #16120c;
+    --color-text: #ede5d8;
+    --color-text-muted: #a09080;
+    --color-text-faint: #6a5e50;
+    --color-text-inverse: #1a1510;
+    --color-primary: #c49a50;
+    --color-primary-hover: #d4aa65;
+    --color-primary-active: #e8c07a;
+    --color-primary-highlight: #2e2418;
+    --color-heading: #f0e6d0;
+    --color-divider: #2e2820;
+    --color-border: #3a3228;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* ─── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: var(--font-body); cursor: pointer; border: none; background: none; }
+
+h1, h2, h3, h4 { color: var(--color-heading); font-family: var(--font-display); line-height: 1.2; }
+
+/* ─── Utility ───────────────────────────────────────────────── */
+.container {
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+.section { padding-block: var(--section-py); }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-surface-offset); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
