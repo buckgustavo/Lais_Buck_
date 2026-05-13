@@ -1,90 +1,16 @@
-# Laís Buck — Mentoria Individual de Carreira
+# React + Vite
 
-> Site de apresentação da mentoria individual de carreira da Laís Buck, voltado para universitárias no último ano que querem se preparar para entrevistas de estágio e dar o próximo passo com mais confiança.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-🌐 **[Acesse o site](https://buckgustavo.github.io/Lais_Buck_/)**
+Currently, two official plugins are available:
 
----
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## 🛠 Tecnologias
+## React Compiler
 
-- [React 18](https://react.dev/)
-- [Vite](https://vitejs.dev/)
-- [Framer Motion](https://www.framer.com/motion/) — animações
-- CSS Modules — estilização componentizada
-- GitHub Actions — deploy automático
-- GitHub Pages — hospedagem
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
----
+## Expanding the ESLint configuration
 
-## 📁 Estrutura do Projeto
-
-```
-src/
-├── components/
-│   ├── Header.jsx         # Navegação e toggle de tema
-│   ├── Hero.jsx           # Seção principal com headline e CTA
-│   ├── About.jsx          # Sobre a Laís Buck
-│   ├── ForWhom.jsx        # Para quem é a mentoria
-│   ├── Pillars.jsx        # Pilares da mentoria
-│   ├── Results.jsx        # Resultados esperados
-│   ├── Testimonials.jsx   # Depoimentos
-│   ├── Process.jsx        # Como funciona
-│   ├── CTAFinal.jsx       # Chamada para ação final
-│   └── Footer.jsx         # Rodapé
-├── hooks/
-│   └── useTheme.js        # Hook de dark/light mode
-├── App.jsx
-├── main.jsx
-└── index.css
-```
-
----
-
-## 🚀 Rodando localmente
-
-```bash
-# Instalar dependências
-npm install
-
-# Rodar em desenvolvimento
-npm run dev
-
-# Build para produção
-npm run build
-
-# Preview do build
-npm run preview
-```
-
----
-
-## 🖼 Foto da Laís
-
-Para exibir a foto no Hero, adicione o arquivo de imagem em:
-
-```
-public/lais-buck.jpg
-```
-
-Sem o arquivo, o site exibe um placeholder com as iniciais **LB** automaticamente.
-
----
-
-## 🚢 Deploy
-
-O deploy é feito automaticamente via **GitHub Actions** a cada push na branch `main`.
-
-O workflow está em `.github/workflows/deploy.yml` e realiza:
-1. Build do projeto com Vite
-2. Upload do artefato para o GitHub Pages
-3. Deploy na URL pública
-
-> **Importante:** Nas configurações do repositório, vá em **Settings → Pages** e selecione a source como **GitHub Actions**.
-
----
-
-## 📞 Contato
-
-Para iniciar a mentoria:
-📱 [WhatsApp](https://wa.me/5516992424117)
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
