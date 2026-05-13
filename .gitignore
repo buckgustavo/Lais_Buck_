@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Claude Code / Ruflo (configurações locais — não versionar)
+.claude/
+.claude-flow/
+.mcp.json
+CLAUDE.md
