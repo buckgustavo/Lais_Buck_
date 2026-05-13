@@ -67,7 +67,7 @@ export default function Footer() {
 
       <div className={styles.bottom}>
         <p className={styles.copy}>
-          &copy; 2026 Lais Buck &middot; Mentoria de Carreira;   Code by G.Buck
+          &copy; 2026 Lais Buck &middot; Mentoria de Carreira &middot; Code by G.Buck
         </p>
       </div>
     </footer>

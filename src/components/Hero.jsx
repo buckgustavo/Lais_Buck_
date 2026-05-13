@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import laisPhoto from '../assets/laisPhotoData.js';
 import styles from './Hero.module.css';
 
 const fadeUp = {
@@ -76,18 +77,10 @@ export default function Hero() {
           <LeafDecor position="bottomRight" />
           <div className={styles.photoFrame}>
             <img
-              src="/lais-buck.jpg"
+              src={laisPhoto}
               alt="Laís Buck — Coordenadora de Cadeia de Suprimentos e mentora de carreira"
               className={styles.photo}
-              onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'flex';
-              }}
             />
-            <div className={styles.photoPlaceholder} style={{ display: 'none' }} aria-hidden="true">
-              <span className={styles.placeholderInitials}>LB</span>
-              <span className={styles.placeholderNote}>Adicione a foto em /public/lais-buck.jpg</span>
-            </div>
           </div>
         </motion.div>
       </div>
